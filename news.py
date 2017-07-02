@@ -2,9 +2,7 @@ from bs4 import BeautifulSoup
 import subprocess
 import time
 from urllib.request import urlopen
-   
-
-
+  
 def bsoup_get_html():
     global list_headline
     get_url = "http://timesofindia.indiatimes.com/"
@@ -14,8 +12,6 @@ def bsoup_get_html():
     list_headline = soup.find('ul',attrs={'class':'list9'}) #get all the text under ul tag
 
 def main():
-
-
     bsoup_get_html()
     list_headline
     match='new_latest#'
@@ -25,11 +21,9 @@ def main():
             notifyme(*content.contents)
             time.sleep(10)
   
-
 def notifyme(msg):
     subprocess.Popen(['notify-send',msg])
     return
-
 
 while(1):
     main()
