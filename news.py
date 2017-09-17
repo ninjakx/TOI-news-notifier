@@ -33,7 +33,6 @@ def main():
         if content.has_attr('pg') and content['pg'].startswith(match):
            
             if os.path.exists(filename):
-      
                 flag=0
                 with open(filename,'r') as csv_file:
                     reader=csv.reader(csv_file)
